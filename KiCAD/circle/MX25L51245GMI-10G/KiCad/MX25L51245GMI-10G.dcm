@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MX25L51245GMI-10G
+D MX25L51245GMI-10G, Serial NOR Flash Memory, 128M x 4 bit, 256M x 2 bit, 512M x 1 bit 512Mbit, 2.7  3.6 V
+F http://docs-asia.electrocomponents.com/webdocs/14ac/0900766b814ac719.pdf
+$ENDCMP
+#
+#End Doc Library

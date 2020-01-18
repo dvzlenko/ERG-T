@@ -1,0 +1,369 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:additional
+LIBS:paddlong
+LIBS:padd
+LIBS:circle-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L CONN_01X01 P2
+U 1 1 5C124D39
+P 2650 1000
+F 0 "P2" H 2650 1100 50  0000 C CNN
+F 1 "CONN_01X01" V 2750 1000 50  0000 C CNN
+F 2 "zoidberg:conn_1mm" H 2650 1000 50  0001 C CNN
+F 3 "" H 2650 1000 50  0000 C CNN
+	1    2650 1000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L CONN_01X01 P3
+U 1 1 5C124E2C
+P 2650 1750
+F 0 "P3" H 2650 1850 50  0000 C CNN
+F 1 "CONN_01X01" V 2750 1750 50  0000 C CNN
+F 2 "zoidberg:conn_1mm" H 2650 1750 50  0001 C CNN
+F 3 "" H 2650 1750 50  0000 C CNN
+	1    2650 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L CONN_01X01 P4
+U 1 1 5C124E7C
+P 3050 1400
+F 0 "P4" H 3050 1500 50  0000 C CNN
+F 1 "CONN_01X01" V 3150 1400 50  0000 C CNN
+F 2 "zoidberg:conn_1mm" H 3050 1400 50  0001 C CNN
+F 3 "" H 3050 1400 50  0000 C CNN
+	1    3050 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_01X01 P1
+U 1 1 5C124F2F
+P 2250 1400
+F 0 "P1" H 2250 1500 50  0000 C CNN
+F 1 "CONN_01X01" V 2350 1400 50  0000 C CNN
+F 2 "zoidberg:conn_1mm" H 2250 1400 50  0001 C CNN
+F 3 "" H 2250 1400 50  0000 C CNN
+	1    2250 1400
+	-1   0    0    1   
+$EndComp
+$Comp
+L CONN_01X01 P5
+U 1 1 5C124F69
+P 3650 1400
+F 0 "P5" H 3650 1500 50  0000 C CNN
+F 1 "CONN_01X01" V 3750 1400 50  0000 C CNN
+F 2 "zoidberg:conn_1mm" H 3650 1400 50  0001 C CNN
+F 3 "" H 3650 1400 50  0000 C CNN
+	1    3650 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Battery_Cell BT1
+U 1 1 5C3F7E1E
+P 4550 1450
+F 0 "BT1" H 4650 1550 50  0000 L CNN
+F 1 "Battery_Cell" H 4650 1450 50  0000 L CNN
+F 2 "zoidberg:Keystone_3001_1x12mm-CoinCell-VARIANT" V 4550 1510 50  0001 C CNN
+F 3 "" V 4550 1510 50  0000 C CNN
+	1    4550 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GroundPad PD2
+U 1 1 5C40A500
+P 6050 1400
+F 0 "PD2" H 5800 1600 50  0000 C CNN
+F 1 "GroundPad" H 6200 1600 50  0000 C CNN
+F 2 "zoidberg:GroundPad-01" H 6050 1500 50  0001 C CIN
+F 3 "" H 6050 1400 50  0000 C CNN
+	1    6050 1400
+	1    0    0    -1  
+$EndComp
+$Comp
+L GroundPad PD3
+U 1 1 5C40A60F
+P 6050 2050
+F 0 "PD3" H 5800 2250 50  0000 C CNN
+F 1 "GroundPad" H 6200 2250 50  0000 C CNN
+F 2 "zoidberg:GroundPad-01" H 6050 2150 50  0001 C CIN
+F 3 "" H 6050 2050 50  0000 C CNN
+	1    6050 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GroundPad PD4
+U 1 1 5C40A655
+P 6050 2750
+F 0 "PD4" H 5800 2950 50  0000 C CNN
+F 1 "GroundPad" H 6200 2950 50  0000 C CNN
+F 2 "zoidberg:GroundPad-01" H 6050 2850 50  0001 C CIN
+F 3 "" H 6050 2750 50  0000 C CNN
+	1    6050 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GroundPad PD1
+U 1 1 5C40A6A2
+P 6000 3450
+F 0 "PD1" H 5750 3650 50  0000 C CNN
+F 1 "GroundPad" H 6150 3650 50  0000 C CNN
+F 2 "zoidberg:GroundPad-01" H 6000 3550 50  0001 C CIN
+F 3 "" H 6000 3450 50  0000 C CNN
+	1    6000 3450
+	1    0    0    -1  
+$EndComp
+Text Label 3650 1900 0    60   ~ 0
+GND
+$Comp
+L CONN_01X01 P6
+U 1 1 5C417CA4
+P 4400 3100
+F 0 "P6" H 4400 3200 50  0000 C CNN
+F 1 "pad" V 4500 3100 50  0000 C CNN
+F 2 "zoidberg:conn_1mm" H 4400 3100 50  0001 C CNN
+F 3 "" H 4400 3100 50  0000 C CNN
+	1    4400 3100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CirclePad PD5
+U 1 1 5C419617
+P 3700 2800
+F 0 "PD5" H 3950 2900 50  0000 C CNN
+F 1 "CirclePad" H 3600 3000 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 3600 2900 50  0001 C CIN
+F 3 "" H 3700 2800 50  0000 C CNN
+	1    3700 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CirclePad PD6
+U 1 1 5C4196D9
+P 3700 3450
+F 0 "PD6" H 3950 3550 50  0000 C CNN
+F 1 "CirclePad" H 3600 3650 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 3600 3550 50  0001 C CIN
+F 3 "" H 3700 3450 50  0000 C CNN
+	1    3700 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CirclePad PD7
+U 1 1 5C41976F
+P 3700 4100
+F 0 "PD7" H 3950 4200 50  0000 C CNN
+F 1 "CirclePad" H 3600 4300 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 3600 4200 50  0001 C CIN
+F 3 "" H 3700 4100 50  0000 C CNN
+	1    3700 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CirclePad PD8
+U 1 1 5C4197FB
+P 3700 4800
+F 0 "PD8" H 3950 4900 50  0000 C CNN
+F 1 "CirclePad" H 3600 5000 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 3600 4900 50  0001 C CIN
+F 3 "" H 3700 4800 50  0000 C CNN
+	1    3700 4800
+	1    0    0    -1  
+$EndComp
+Text Label 4200 3750 0    60   ~ 0
+GND
+Wire Wire Line
+	2450 1400 2850 1400
+Wire Wire Line
+	2650 1200 2650 1550
+Connection ~ 2650 1400
+Wire Wire Line
+	3450 1100 3450 1900
+Wire Wire Line
+	3450 1100 2850 1100
+Wire Wire Line
+	2850 1100 2850 1350
+Wire Wire Line
+	2850 1350 2650 1350
+Connection ~ 2650 1350
+Connection ~ 5250 1700
+Connection ~ 5800 1700
+Connection ~ 5950 1700
+Wire Wire Line
+	4550 1700 6400 1700
+Connection ~ 6100 1700
+Connection ~ 6250 1700
+Connection ~ 6400 1700
+Connection ~ 6400 2350
+Connection ~ 6250 2350
+Connection ~ 6100 2350
+Connection ~ 5950 2350
+Wire Wire Line
+	5500 1700 5500 3750
+Connection ~ 5500 1700
+Connection ~ 5800 2350
+Connection ~ 6400 3050
+Connection ~ 6250 3050
+Connection ~ 6100 3050
+Connection ~ 5950 3050
+Connection ~ 5500 2350
+Connection ~ 5800 3050
+Connection ~ 6350 3750
+Connection ~ 6200 3750
+Connection ~ 6050 3750
+Connection ~ 5900 3750
+Connection ~ 5500 3050
+Connection ~ 5750 3750
+Wire Wire Line
+	4550 1550 4550 1700
+Wire Wire Line
+	5500 3750 6350 3750
+Wire Wire Line
+	6400 3050 5500 3050
+Wire Wire Line
+	6400 2350 5500 2350
+Wire Wire Line
+	3450 1900 3650 1900
+Connection ~ 3450 1400
+Wire Wire Line
+	2750 3100 4200 3100
+Connection ~ 3600 3100
+Connection ~ 3750 3100
+Wire Wire Line
+	2750 3750 4200 3750
+Connection ~ 3600 3750
+Connection ~ 3750 3750
+Wire Wire Line
+	2750 4400 4200 4400
+Connection ~ 3600 4400
+Connection ~ 3750 4400
+Wire Wire Line
+	2750 5100 4200 5100
+Connection ~ 3600 5100
+Connection ~ 3750 5100
+Text Label 4200 2850 0    60   ~ 0
+18650
+Text Label 4200 4400 0    60   ~ 0
+VBAT
+Text Label 4200 5100 0    60   ~ 0
+VBAT
+Wire Wire Line
+	4550 1250 4550 1000
+Text Label 4550 1000 0    60   ~ 0
+VBAT
+$Comp
+L CirclePad PD9
+U 1 1 5C41ADFA
+P 3000 2800
+F 0 "PD9" H 3250 2900 50  0000 C CNN
+F 1 "CirclePad" H 2900 3000 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 2900 2900 50  0001 C CIN
+F 3 "" H 3000 2800 50  0000 C CNN
+	1    3000 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L CirclePad PD10
+U 1 1 5C41AE56
+P 3000 3450
+F 0 "PD10" H 3250 3550 50  0000 C CNN
+F 1 "CirclePad" H 2900 3650 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 2900 3550 50  0001 C CIN
+F 3 "" H 3000 3450 50  0000 C CNN
+	1    3000 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L CirclePad PD11
+U 1 1 5C41AEF6
+P 3000 4100
+F 0 "PD11" H 3250 4200 50  0000 C CNN
+F 1 "CirclePad" H 2900 4300 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 2900 4200 50  0001 C CIN
+F 3 "" H 3000 4100 50  0000 C CNN
+	1    3000 4100
+	1    0    0    -1  
+$EndComp
+Connection ~ 3450 3100
+Connection ~ 3050 3100
+Connection ~ 2900 3100
+Connection ~ 2900 3750
+Connection ~ 3450 3750
+Connection ~ 3050 3750
+Connection ~ 3450 4400
+Connection ~ 3050 4400
+Connection ~ 2900 4400
+$Comp
+L CirclePad PD12
+U 1 1 5C41B2FA
+P 3000 4800
+F 0 "PD12" H 3250 4900 50  0000 C CNN
+F 1 "CirclePad" H 2900 5000 50  0000 C CNN
+F 2 "zoidberg:pad_1.5x1.0" H 2900 4900 50  0001 C CIN
+F 3 "" H 3000 4800 50  0000 C CNN
+	1    3000 4800
+	1    0    0    -1  
+$EndComp
+Connection ~ 3450 5100
+Connection ~ 3050 5100
+Connection ~ 2900 5100
+Wire Wire Line
+	5250 1700 5250 2000
+Text Label 4850 2000 2    60   ~ 0
+GND
+Wire Wire Line
+	5250 2000 4850 2000
+Wire Wire Line
+	4200 3550 4050 3550
+Wire Wire Line
+	4050 3550 4050 3750
+Connection ~ 4050 3750
+Wire Wire Line
+	4050 3100 4050 2850
+Wire Wire Line
+	4050 2850 4200 2850
+Connection ~ 4050 3100
+$EndSCHEMATC

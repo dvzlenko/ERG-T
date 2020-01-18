@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP PADD
+D 700 mA Low Dropout Voltage Regulator, Fixed 3.3V, SOT-223
+K 700mA LDO Regulator 3.3V Positive
+F http://cds.linear.com/docs/en/datasheet/112935ff.pdf
+$ENDCMP
+#
+#End Doc Library

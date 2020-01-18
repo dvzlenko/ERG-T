@@ -1,0 +1,17 @@
+(module 700-BAA-B00 (layer F.Cu) (tedit 5C52B95E)
+  (descr "Resistor, Axial_DIN0204 series, Axial, Vertical, pin pitch=1.9mm, 0.16666666666666666W = 1/6W, length*diameter=3.6*1.6mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf")
+  (tags "Resistor Axial_DIN0204 series Axial Vertical pin pitch 1.9mm 0.16666666666666666W = 1/6W length 3.6mm diameter 1.6mm")
+  (fp_text reference R14 (at 0.95 -1.86) (layer F.SilkS) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value S2 (at 1.05 1.025) (layer F.SilkS)
+    (effects (font (size 0.7 0.7) (thickness 0.1)))
+  )
+  (pad 1 thru_hole circle (at 0 0) (size 1 1) (drill 0.5) (layers *.Cu *.Mask))
+  (pad 2 thru_hole circle (at 1.95 0) (size 1 1) (drill 0.5) (layers *.Cu *.Mask))
+  (model ${KISYS3DMOD}/Resistors_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P1.90mm_Vertical.wrl
+    (at (xyz 0 0 0))
+    (scale (xyz 0.393701 0.393701 0.393701))
+    (rotate (xyz 0 0 0))
+  )
+)

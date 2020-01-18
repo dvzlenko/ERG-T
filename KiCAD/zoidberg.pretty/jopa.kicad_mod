@@ -1,0 +1,18 @@
+(module jopa (layer F.Cu) (tedit 5C419380)
+  (descr "solder Pin_ with flat fork, hole diameter 0.9mm, length 10.0mm, width 2.4mm")
+  (tags "solder Pin_ with flat fork")
+  (fp_text reference PD5 (at 0 1.3) (layer F.SilkS) hide
+    (effects (font (size 1 1) (thickness 0.15)))
+  )
+  (fp_text value DGND (at 1.3 -0.9 90) (layer F.SilkS)
+    (effects (font (size 0.5 0.5) (thickness 0.1)))
+  )
+  (pad 1 smd trapezoid (at 0 0) (size 1.5 1) (rect_delta 0.15 0 ) (layers F.Cu F.Paste F.Mask))
+  (pad 2 smd trapezoid (at 0 0) (size 1.5 1) (rect_delta 0.15 0 ) (layers B.Cu F.Paste B.Mask))
+  (pad 3 thru_hole circle (at 0 0) (size 1 1) (drill 0.3) (layers *.Cu *.Mask))
+  (model ${KISYS3DMOD}/Connectors.3dshapes/Pin_d0.9mm_L10.0mm_W2.4mm_FlatFork.wrl
+    (at (xyz 0 0 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
+)

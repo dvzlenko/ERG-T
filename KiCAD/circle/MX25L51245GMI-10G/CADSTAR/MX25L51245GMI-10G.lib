@@ -1,0 +1,18 @@
+.MX25L51245GMI-10G :1 ;MX25L51245GMI-10G, Serial NOR Flash Memory, 128M x 4 bit, 256M x 2 bit, 512M x 1 bit 512Mbit, 2.7  3.6 V
+SOIC127P1030X265-16N
+*STM Q
+*NGS
+*PLB 1="NC/SIO3" 2="VCC" 3="RESET#" 4="NC_1" 5="DNU_1" 6="DNU_2" 7="CS#" 8="SO/SIO1" 9="WP#/SIO2" 10="GND" 11="DNU_3" 12="DNU_4" 13="NC_2" 14="NC_3" 15="SI/SIO0" 16="SCLK"
+*MXP 16
+*DFN MX25L51245GMI-10G
+~!Manufacturer_Name (Macronix)
+~!Manufacturer_Part_Number (MX25L51245GMI-10G)
+~!RS Part Number (9140674)
+~!Link RS Price/Stock (http://uk.rs-online.com/web/p/products/9140674)
+~!Arrow Part Number (MX25L51245GMI-10G)
+~!Link Arrow Price/Stock (https://www.arrow.com/en/products/mx25l51245gmi-10g/macronix-international)
+~!Link Datasheet (http://docs-asia.electrocomponents.com/webdocs/14ac/0900766b814ac719.pdf)
+~!Height (2.65mm)
+~!3D_Model (MX25L51245GMI-10G)
+MX25L51245GMI-10G
+1.1!U 2.1!U 3.1!U 4.1!U 5.1!U 6.1!U 7.1!U 8.1!U 16.1!U 15.1!U 14.1!U 13.1!U 12.1!U 11.1!U 10.1!U 9.1!U 

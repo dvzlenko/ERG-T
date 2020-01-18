@@ -1,0 +1,8 @@
+init
+reset init
+
+flash erase_sector 0 0 59
+
+flash write_bank 0 main.bin 0
+reset run
+shutdown
