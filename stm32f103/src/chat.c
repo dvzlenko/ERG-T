@@ -512,31 +512,12 @@ void vChatTask(void *vpars)
 			while (sd < sz) {
 				// number of bytes to read from the FLASH
 				rd = SECTOR_SIZE*(sd/SECTOR_SIZE < sz/SECTOR_SIZE) + sz%SECTOR_SIZE*(sd/SECTOR_SIZE == sz/SECTOR_SIZE);
-				//sniprintf(s, sizeof(s), "rd = %d; sd = %d", rd, sd);
-				//cdc_write_buf(&cdc_out, s, strlen(s), 1);
-				//sniprintf(s, sizeof(s), "");
 				// read data from the FLASH to the data bufer
 				sFLASH_ReadData(data, address, rd, 0);
-				//cdc_write_buf(&cdc_out, " ", 0, 1);
-				//cdc_write_buf(&cdc_out, " - package:\r\n", 0, 1);
-				//for (int i = 0; i < rd; i++) {
-				//	data[i] = 'a';
-				//}
-				//vTaskDelay(10);
-				//for (int i = 0; i < rd+1; i=i+4) {
-				//	sniprintf(s, sizeof(s), "%8x\r\n", data[i]<<24 | data[i+1]<<16 | data[i+2]<<8 | data[i+3]);
-				//	cdc_write_buf(&cdc_out, s, strlen(s), 1);
-				//	sniprintf(s, sizeof(s), "");
-				//}
 				// write the data to the USB IO bufer
 				sd += cdc_write_buf(&cdc_out, data, rd, 1);
-				//sd += rd;
 				// increment the address 
 				address += rd;
-				//vTaskDelay(1000);
-				//sniprintf(s, sizeof(s), "rd = %d; sd = %d", rd, sd);
-				//cdc_write_buf(&cdc_out, s, strlen(s), 1);
-				//sniprintf(s, sizeof(s), "");
 			}
 			// turn the FLASH off
 			sFLASH_DeInit();
@@ -571,7 +552,6 @@ void vChatTask(void *vpars)
 
 			AD_SetConfig(AD_CR_BM | AD_CR_Gain128 | AD_CR_RD | AD_CR_BUF | AD_CR_CH1);
 			AD_SetMode(AD_MR_MD_IM | AD_MR_FS_123);
-			//AD_WriteOFF(0x7FFF38);
 
 			ID = AD_ReadID();
 			SR = AD_ReadStatus();
@@ -585,32 +565,20 @@ void vChatTask(void *vpars)
 			cdc_write_buf(&cdc_out, s, strlen(s), 1);
 			
 			for (i=0; i < 10; i++) {
-				//AD_SetMode(AD_MR_MD_IZC | AD_MR_FS_123);
-				//while (AD_ReadStatus() & 0x80);
-				//AD_SetMode(AD_MR_MD_IFC | AD_MR_FS_123);
-				//while (AD_ReadStatus() & 0x80);
 				AD_ReadDataCont(DD,5,AD_MR_FS_62);
 				AD_ReadDataCont(DD,sizeof(DD)/4,AD_MR_FS_62);
 				D = 0;
 				for (j = 0; j < sizeof(DD)/4; j++) {
 			                D += (1250000000.0/8388608.0)*(DD[j] - 8388608.0)/(1<<(AD_CR_Gain128>>8));
-					//sniprintf(s, sizeof(s), "%x, ", DD[j]);
-					//cdc_write_buf(&cdc_out, s, strlen(s), 1);
 				}
-				//cdc_write_buf(&cdc_out, "\r\n", 0, 1);
 				
 				V = 4*D/sizeof(DD);	
-				//sniprintf(s, sizeof(s), "%x: %d, ", DD[10], V);
 				sniprintf(s, sizeof(s), "%d, ", V);
 				cdc_write_buf(&cdc_out, s, strlen(s), 1);
 			}
 			cdc_write_buf(&cdc_out, "\r\n\r\n", 0, 1);
 			AD_SetConfig(AD_CR_BM | AD_CR_Gain128 | AD_CR_RD | AD_CR_BUF | AD_CR_CH1);
 			for (i = 0; i < 10; i++) {
-				//AD_SetMode(AD_MR_MD_IZC | AD_MR_FS_123);
-				//while (AD_ReadStatus() & 0x80);
-				//AD_SetMode(AD_MR_MD_IFC | AD_MR_FS_123);
-				//while (AD_ReadStatus() & 0x80);
 				J = 0;
 				for (j = 0; j < 25; j++) {
 					J += AD_ReadDataSingle(AD_MR_FS_62);
@@ -635,8 +603,6 @@ void vChatTask(void *vpars)
 			cdc_write_buf(&cdc_out, s, strlen(s), 1);
 			sniprintf(s, sizeof(s), "CR: %4x; ZSR: %6x; FSR: %6x;\r\n", CR, OR, FR);
 			cdc_write_buf(&cdc_out, s, strlen(s), 1);
-			//sniprintf(s, sizeof(s), "JOPA: %d\r\n", 1<<(AD_CR_Gain128>>8));
-			//cdc_write_buf(&cdc_out, s, strlen(s), 1);
 
 			AD_Reset();
 			AD_DeInit();
@@ -694,15 +660,8 @@ void vChatTask(void *vpars)
 		} else if (strcmp(tk, cmd_list[CMD_sleep]) == 0) {
 			PowerOFF();
 		} else if (strcmp(tk, cmd_list[CMD_wakeup]) == 0) {
-			//RTC_Init();
-			//BKP_RTCOutputConfig(BKP_RTCOutputSource_Second);
-			//RTC_SetAlarm(RTC_GetCounter()+10);
 			BKP_DeInit();
 		} else {
-			//for (i = 0; i < sizeof(cmd); i++) {
-			//	sniprintf(s, sizeof(s), "%c", cmd[i]);
-			//	cdc_write_buf(&cdc_out, s, strlen(s), 1);
-			//	}
 			cdc_write_buf(&cdc_out, "\r\n", 0, 1);
 			sniprintf(s, sizeof(s), "E: try `help`\r\n");
 			}
