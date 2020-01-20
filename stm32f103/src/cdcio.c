@@ -2,7 +2,6 @@
 #include "cdcio.h"
 #include "logger.h"
 
-//volatile int	bc = 0;
 volatile char	cdc_in_buf[IOBUFLEN];
 volatile char	cdc_out_buf[IOBUFLEN];
 cdc_buf_t	cdc_in = {cdc_in_buf, 0, 0};
@@ -33,7 +32,6 @@ uint16_t cdc_read_buf(cdc_buf_t *buf, char *s, uint16_t len)
 	while (i < len && buf->out != buf->in) {
 		s[i++] = buf->buf[buf->out];
 		buf->out = (buf->out + 1) % IOBUFLEN;
-		//bc++;
 	}
 
 	return i;
