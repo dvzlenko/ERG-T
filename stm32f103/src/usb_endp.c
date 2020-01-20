@@ -12,7 +12,8 @@
 
 uint8_t USB_Rx_Buffer[VIRTUAL_COM_PORT_DATA_SIZE];
 uint8_t USB_Tx_Buffer[VIRTUAL_COM_PORT_DATA_SIZE];
-uint8_t  USB_Tx_State = 0;
+uint8_t USB_Tx_State = 0;
+uint8_t USB_ZLP_flag = 0;
 
 void stdout_to_usb();
 
@@ -58,16 +59,27 @@ void Handle_USBAsynchXfer (void) {
   }
 }
 
-void stdout_to_usb(){
+void stdout_to_usb() {
   uint16_t USB_Tx_length;
   USB_Tx_length = cdc_read_buf(&cdc_out, USB_Tx_Buffer, VIRTUAL_COM_PORT_DATA_SIZE);
-  if (USB_Tx_length){
+  if (USB_Tx_length) {
     UserToPMABufferCopy(USB_Tx_Buffer, ENDP1_TXADDR, USB_Tx_length);
     SetEPTxCount(ENDP1, USB_Tx_length);
     SetEPTxValid(ENDP1);
+    if (USB_Tx_length == 64 & cdc_out.in == cdc_out.out) {  
+      USB_ZLP_flag = 1;
+    }
   }
-  else{
-    USB_Tx_State = 0;
+  else {
+    if (USB_ZLP_flag) {
+      UserToPMABufferCopy(USB_Tx_Buffer, ENDP1_TXADDR, USB_Tx_length);
+      SetEPTxCount(ENDP1, USB_Tx_length);
+      SetEPTxValid(ENDP1);
+      USB_ZLP_flag = 0;
+    }
+    else {
+      USB_Tx_State = 0;
+    }
   }
 }
 
