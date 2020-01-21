@@ -66,13 +66,12 @@ void stdout_to_usb() {
     UserToPMABufferCopy(USB_Tx_Buffer, ENDP1_TXADDR, USB_Tx_length);
     SetEPTxCount(ENDP1, USB_Tx_length);
     SetEPTxValid(ENDP1);
-    if (USB_Tx_length == 64 & cdc_out.in == cdc_out.out) {  
+    if (USB_Tx_length == 64 && cdc_out.in == cdc_out.out) {  
       USB_ZLP_flag = 1;
     }
   }
   else {
     if (USB_ZLP_flag) {
-      UserToPMABufferCopy(USB_Tx_Buffer, ENDP1_TXADDR, USB_Tx_length);
       SetEPTxCount(ENDP1, USB_Tx_length);
       SetEPTxValid(ENDP1);
       USB_ZLP_flag = 0;
