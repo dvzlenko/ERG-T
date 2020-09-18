@@ -121,16 +121,16 @@ int GetVolt(uint8_t CHAN) {
 
 /* returns corrected time since last calibration in seconds */
 uint32_t GetTime(void) {
-	uint32_t epoch, dT2;
-	float dT1;
+	uint32_t epoch, dT1, dT2;
+	double prescaler;
 
 	RTC_Init();
 	epoch = RTC_GetCounter();
 	ReadTimeSettings();
+	prescaler = timeSettings.prescaler;
 	dT1 = epoch - timeSettings.start;
-	dT2 = dT1*timeSettings.prescaler;
+	dT2 = dT1 * prescaler;
 	return timeSettings.start + dT2;
-	//return epoch;
 }
 
 /* reads the current address in the FLASH from the BPR of STM */
@@ -275,10 +275,12 @@ void MakeMeasurement(void) {
    mode == 1 forces it to set the Alarm Time, while in case of mode == 0 it only returns the value */
 uint32_t SetWakeUp(uint8_t mode) {
 	uint32_t address, num, real_time, real_alarm_time, real_operation_time, stm_operation_time, stm_alarm_time, stm_time;
+	double prescaler;
 	// reading of the settings
 	ReadProgramSettings();
 	ReadTimeSettings();
 	address = GetAddress();
+	prescaler = timeSettings.prescaler;
 	// get real time
 	real_time = GetTime();
 	if (real_time < loggerSettings.finish) { 
@@ -290,7 +292,7 @@ uint32_t SetWakeUp(uint8_t mode) {
 		// duration of the time period that the DEVICE should have been operating since the TIME was set, at the next wake-up time, in real time-space :)
 		real_operation_time = real_alarm_time - timeSettings.start;
 		// duration of the same period in the internal STM time-space
-		stm_operation_time = real_operation_time/timeSettings.prescaler; 
+		stm_operation_time = real_operation_time / prescaler; 
 		// desired wake-up time in the STM internal time-space
 		stm_alarm_time = timeSettings.start + stm_operation_time;
 		// current time in STM time-space

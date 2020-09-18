@@ -252,7 +252,7 @@ void vChatTask(void *vpars)
 			epoch = RTC_GetCounter();
 			corr_epoch = GetTime();
 			prscl = 10000000*timeSettings.prescaler;
-			
+
 			sniprintf(s, sizeof(s), "%d\r\n", timeSettings.start);
 			cdc_write_buf(&cdc_out, s, strlen(s), 1);
 			sniprintf(s, sizeof(s), "%d\r\n", epoch);
@@ -261,6 +261,7 @@ void vChatTask(void *vpars)
 			cdc_write_buf(&cdc_out, s, strlen(s), 1);
 			sniprintf(s, sizeof(s), "%d\r\n", prscl);
 			cdc_write_buf(&cdc_out, s, strlen(s), 1);
+
 			sniprintf(s, sizeof(s), "");
 
 		} else if (strcmp(tk, cmd_list[CMD_SetProgramm]) == 0) {
